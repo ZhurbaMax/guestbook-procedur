@@ -1,0 +1,35 @@
+<?php
+    $query = "SELECT id,title,introtext ,images,alias FROM #__content where catid = 12 ORDER BY id DESC LIMIT 3";
+    $db = JFactory::getDBO();
+    $db->setQuery($query);
+$articles = $db->loadObjectList();
+?>
+<section class="fw-main-row pt40">
+    <div class="fw-container">
+        <h2 class="heading-decor pb20">Останні новини</h2>
+        <div class="fw-row">
+            <?php
+                            foreach($articles as $row){
+                            $image = json_decode($row->images);
+            $path = $image->image_intro;
+            $title = $row->title;
+            $text = mb_strimwidth($row->introtext, 0, 100, "...");
+            $url = $row->id."-".$row->alias;
+            ?>
+            <!-- Blog item -->
+            <div class="blog-item fw-col-md-4">
+                <div class="fw-row">
+                    <div class="image fw-col-sm-5 fw-col-md-12"><a href="/novini/<?php echo $url ?>"><img src="<?php echo $path ?>" alt="New investigations"></a></div>
+                    <div class="fw-col-sm-7 fw-col-md-12">
+                        <h4><a href="/novini/<?php echo $url ?>"><?php echo $title ?></a></h4>
+                        <p><?php echo $text ?> </p>
+                        <a href="/novini/<?php echo $url ?>" class="button-style2 gray min">Детальніше</a>
+                    </div>
+                </div>
+            </div>
+            <!-- END Blog item -->
+            <?php }?>
+
+        </div>
+    </div>
+</section>
