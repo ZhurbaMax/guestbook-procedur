@@ -46,7 +46,7 @@ if (!empty($_POST)){
         <li><a href="login.php">Авторизация</a></li>
     </ul>
 </header>
-<div class="body-content">
+<div class="body-content container mlogin">
 <h1>Вход</h1>
 <div>
     <form method="POST">
@@ -69,7 +69,7 @@ if (!empty($_POST)){
         </div>
         <div>
             <br/>
-            <input type="submit" name="submit" value="Войти">
+            <input class="button" type="submit" name="submit" value="Войти">
         </div>
     </form>
 </div>

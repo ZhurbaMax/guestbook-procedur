@@ -17,7 +17,7 @@ span {
 }
 
 .mlogin {
-    margin: 170px auto 0;
+    margin: 120px auto 0;
 }
 
 .mregister {
@@ -89,7 +89,7 @@ span {
     line-height: 1;
     width: 100%;
     padding: 3px;
-    margin: 0 6px 5px 0;
+    margin: 6px 6px 6px 0;
     outline: none;
     border: 1px solid #d9d9d9;
 }
@@ -175,3 +175,11 @@ ul {
     color: #590404;
     font-weight: bold;
 }
+.replay {
+    height: 30px;
+    width: 80%;
+    background: #f3f2f2;
+    margin-bottom: 8px;
+}
+#email {width: 100%;line-height: 25px;font-size: 20px;margin: 6px auto;}
+.select {width: 100%;padding: 6px;margin: 6px auto;}
